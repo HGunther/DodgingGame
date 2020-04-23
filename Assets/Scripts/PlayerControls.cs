@@ -53,7 +53,7 @@ public class PlayerControls : MonoBehaviour
         //return rawMouseX - transform.position.x;
         if (Input.touches.Length > 0)
         {
-            var difference = Input.touches[0].position.x - transform.position.x;
+            var difference = Camera.main.ScreenToWorldPoint(Input.touches[0].position).x - transform.position.x;
             return difference;
         }
         return 0;
